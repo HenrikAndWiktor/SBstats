@@ -26,7 +26,7 @@ public class MainHandle {
             YamlReader y = new YamlReader(new FileReader(new File(MessageFormat.format("plugins/Essentials/userdata/{0}.yml", uuid))));
             Player p = y.read(Player.class);
             System.out.println("MainHandle.playerstats(String) query from "+httpsr.getRemoteAddr()+" try to get player ip "+p.ipAddress);
-            return String.format("{\"uuid\":\"%s\",\"name\":\"%s\",\"xyz\":\"%s/%s/%s\",\"money\":\"%s\"}",uuid,p.lastAccountName,p.logoutlocation.get("x"),p.logoutlocation.get("y"),p.logoutlocation.get("z"),p.money);
+            return String.format("{\"uuid\":\"%s\",\"name\":\"%s\",\"xyz\":\"%s/%s/%s\",\"money\":\"%s\",\"yawpitch\":\"%s/%s\"}",uuid,p.lastAccountName,p.logoutlocation.get("x"),p.logoutlocation.get("y"),p.logoutlocation.get("z"),p.money,p.logoutlocation.get("yaw"),p.logoutlocation.get("pitch"));
         } catch (FileNotFoundException e) {
             return String.format("{\"uuid\":\"%s\",\"error\":\"Internal 404: Did'nt find userdata. Try to login to this minecraft server, logout and reload this page.\",\"stack\":\"%s\"}",uuid,e.getMessage());
         } catch (YamlException e) {
