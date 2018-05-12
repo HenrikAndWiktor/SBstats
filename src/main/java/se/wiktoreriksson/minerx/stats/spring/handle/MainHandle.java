@@ -1,4 +1,4 @@
-package se.wiktoreriksson.minerx.stats.spring.handle.handle;
+package se.wiktoreriksson.minerx.stats.spring.handle;
 
 import com.esotericsoftware.yamlbeans.YamlException;
 import com.esotericsoftware.yamlbeans.YamlReader;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import se.wiktoreriksson.minerx.stats.spring.handle.yaml.parse.Player;
+import se.wiktoreriksson.minerx.stats.spring.yaml.parse.Player;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;

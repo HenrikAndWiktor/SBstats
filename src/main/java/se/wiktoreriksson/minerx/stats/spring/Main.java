@@ -1,4 +1,4 @@
-package se.wiktoreriksson.minerx.stats.spring.handle;
+package se.wiktoreriksson.minerx.stats.spring;
 
 import java.util.Arrays;
 

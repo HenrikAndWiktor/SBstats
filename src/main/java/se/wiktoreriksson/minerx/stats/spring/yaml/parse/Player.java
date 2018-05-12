@@ -1,4 +1,4 @@
-package se.wiktoreriksson.minerx.stats.spring.handle.yaml.parse;
+package se.wiktoreriksson.minerx.stats.spring.yaml.parse;
 
 import java.util.Map;
 
