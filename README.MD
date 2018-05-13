@@ -1,6 +1,6 @@
 # SBstats
 
-Simple maven project built in `Spring Boot`
+API for Minecraft Servers built in `Spring Boot` to retrieve user data JSON from server YAML file
 
 Windows:
 Note: In Git Bash, C:\ is /c/
