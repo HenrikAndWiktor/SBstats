@@ -26,5 +26,6 @@ public class SBstatsErrorTest {
         mvc.perform(MockMvcRequestBuilders.get("/userapi?uuid=randomstring").accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(equalTo("{\"uuid\":\"randomstring\",\"error\":\"Internal 404: Did'nt find userdata. Try to login to this minecraft server, logout and reload this page.\",\"stack\":\"plugins/Essentials/userdata/randomstring.yml (No such file or directory)\"}")));
+        System.out.println("error query done! Got string \"{\"uuid\":\"randomstring\",\"error\":\"Internal 404: Did'nt find userdata. Try to login to this minecraft server, logout and reload this page.\",\"stack\":\"plugins/Essentials/userdata/randomstring.yml (No such file or directory)\"}\"");
     }
 }
