@@ -1,4 +1,4 @@
-package se.wiktoreriksson.minerx.stats.spring.handle;
+package se.wiktoreriksson.minerx.stats.spring.controller;
 
 import com.esotericsoftware.yamlbeans.YamlException;
 import com.esotericsoftware.yamlbeans.YamlReader;
@@ -16,7 +16,7 @@ import java.io.FileReader;
 import java.text.MessageFormat;
 
 @RestController
-public class MainHandle {
+public class MainController {
     @Autowired
     public HttpServletRequest httpsr;
     @RequestMapping(value = "/userapi",method = RequestMethod.GET,produces = "application/json")
@@ -25,7 +25,7 @@ public class MainHandle {
             if (httpsr!=null) System.out.println(httpsr.getRemoteAddr());
             YamlReader y = new YamlReader(new FileReader(new File(MessageFormat.format("plugins/Essentials/userdata/{0}.yml", uuid))));
             Player p = y.read(Player.class);
-            System.out.println("MainHandle.playerstats(String) query from "+httpsr.getRemoteAddr()+" try to get player ip "+p.ipAddress);
+            System.out.println("MainController.playerstats(String) query from "+httpsr.getRemoteAddr()+" try to get player ip "+p.ipAddress);
             return String.format("{\"uuid\":\"%s\",\"name\":\"%s\",\"xyz\":\"%s/%s/%s\",\"money\":\"%s\",\"yawpitch\":\"%s/%s\"}",uuid,p.lastAccountName,p.logoutlocation.get("x"),p.logoutlocation.get("y"),p.logoutlocation.get("z"),p.money,p.logoutlocation.get("yaw"),p.logoutlocation.get("pitch"));
         } catch (FileNotFoundException e) {
             return String.format("{\"uuid\":\"%s\",\"error\":\"Internal 404: Did'nt find userdata. Try to login to this minecraft server, logout and reload this page.\",\"stack\":\"%s\"}",uuid,e.getMessage());
