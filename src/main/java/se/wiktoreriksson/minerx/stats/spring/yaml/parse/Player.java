@@ -4,9 +4,9 @@ import java.util.Map;
 
 public class Player {
     public String lastAccountName;
-    public Map timestamps;
+    @SuppressWarnings("unused") public Map timestamps;
     public String ipAddress;
-    public Map lastlocation;
+    @SuppressWarnings("unused") public Map lastlocation;
     public Map logoutlocation;
     public String money;
 }
